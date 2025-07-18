@@ -13,7 +13,7 @@ const ProductCard = ({ product, user }) => {
           <img src={product.imageUrl} alt={product.name} className="product-image" />
           {isSuperAdmin && (
             <div className="admin-overlay">
-              <span className="admin-badge">👑 ADMIN VIEW</span>
+              <span className="admin-badge"> ADMIN VIEW</span>
             </div>
           )}
         </div>
@@ -27,16 +27,16 @@ const ProductCard = ({ product, user }) => {
               <div className="admin-product-info">
                 <div className="admin-stats">
                   <div className="admin-stat">
-                    <span className="stat-icon">📊</span>
+                    <span className="stat-icon"></span>
                     <span className="stat-text">View Analytics</span>
                   </div>
                   <div className="admin-stat">
-                    <span className="stat-icon">⚙️</span>
+                    <span className="stat-icon"></span>
                     <span className="stat-text">Manage Product</span>
                   </div>
                 </div>
                 <div className="admin-note">
-                  <small>🔒 Admin accounts cannot purchase products</small>
+                  <small>Admin accounts cannot purchase products</small>
                 </div>
               </div>
             ) : (

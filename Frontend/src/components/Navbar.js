@@ -10,7 +10,7 @@ const Navbar = ({ user, logout }) => {
       <div className="nav-container">
         <Link to="/" className="nav-logo">
           E-Commerce Store
-          {isSuperAdmin && <span className="super-admin-indicator">👑</span>}
+          {isSuperAdmin && <span className="super-admin-indicator"></span>}
         </Link>
         
         <div className="nav-menu">
@@ -20,7 +20,7 @@ const Navbar = ({ user, logout }) => {
                 to="/" 
                 className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}
               >
-                🏠 {isSuperAdmin ? 'Store Overview' : 'Home'}
+                 {isSuperAdmin ? 'Store Overview' : 'Home'}
               </Link>
               
               {!isSuperAdmin && (
@@ -28,7 +28,7 @@ const Navbar = ({ user, logout }) => {
                   to="/orders" 
                   className={`nav-link ${location.pathname === '/orders' ? 'active' : ''}`}
                 >
-                  📦 My Orders
+                   My Orders
                 </Link>
               )}
               
@@ -37,7 +37,7 @@ const Navbar = ({ user, logout }) => {
                   to="/admin" 
                   className={`nav-link ${location.pathname === '/admin' ? 'active' : ''}`}
                 >
-                  👑 Admin Dashboard
+                   Admin Dashboard
                 </Link>
               )}
               
@@ -55,7 +55,7 @@ const Navbar = ({ user, logout }) => {
             </>
           ) : (
             <Link to="/login" className="nav-link">
-              🔐 Login
+               Login
             </Link>
           )}
         </div>

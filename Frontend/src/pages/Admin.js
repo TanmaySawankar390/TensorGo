@@ -167,7 +167,7 @@ const Admin = ({ user }) => {
           </div>
         </div>
         <div className="stat-card success">
-          <div className="stat-icon">📦</div>
+          <div className="stat-icon"></div>
           <div className="stat-content">
             <h3>{analytics?.totalProducts || 0}</h3>
             <p>Active Products</p>
@@ -175,7 +175,7 @@ const Admin = ({ user }) => {
           </div>
         </div>
         <div className="stat-card info">
-          <div className="stat-icon">🛒</div>
+          <div className="stat-icon"></div>
           <div className="stat-content">
             <h3>{analytics?.completedPurchases || 0}</h3>
             <p>Successful Orders</p>
@@ -184,7 +184,7 @@ const Admin = ({ user }) => {
           </div>
         </div>
         <div className="stat-card revenue">
-          <div className="stat-icon">💰</div>
+          <div className="stat-icon"></div>
           <div className="stat-content">
             <h3>${analytics?.totalRevenue || '0.00'}</h3>
             <p>Total Revenue</p>
@@ -195,7 +195,7 @@ const Admin = ({ user }) => {
 
       <div className="admin-sections">
         <div className="section">
-          <h3>📈 Live Purchase Activity</h3>
+          <h3>Live Purchase Activity</h3>
           <div className="recent-purchases">
             {analytics?.recentPurchases?.slice(0, 8).map(purchase => (
               <div key={purchase._id} className="recent-purchase-item">
@@ -227,7 +227,7 @@ const Admin = ({ user }) => {
         </div>
 
         <div className="section">
-          <h3>🏆 Best Performing Products</h3>
+          <h3>Best Performing Products</h3>
           <div className="top-products">
             {analytics?.topProducts?.map((item, index) => (
               <div key={item._id} className="top-product-item">
@@ -255,7 +255,7 @@ const Admin = ({ user }) => {
         </div>
 
         <div className="section">
-          <h3>💎 VIP Customers</h3>
+          <h3>VIP Customers</h3>
           <div className="top-customers">
             {analytics?.topUsers?.map((item, index) => (
               <div key={item._id} className="top-customer-item">
@@ -307,16 +307,16 @@ const Admin = ({ user }) => {
                 <h4>{user.name}</h4>
                 <p className="user-email">{user.email}</p>
                 <span className={`user-role ${user.isAdmin ? 'admin' : 'user'}`}>
-                  {user.isAdmin ? '👑 Admin' : '👤 Customer'}
+                  {!user.isAdmin ? 'Customer' : 'Admin'}
                 </span>
                 {user.email === 'tanmaysawankar9175@gmail.com' && (
-                  <span className="super-admin-badge">⭐ Super Admin</span>
+                  <span className="super-admin-badge"> Super Admin</span>
                 )}
                 <span 
                   className="customer-value"
                   style={{ color: getCustomerValueColor(user.customerValue) }}
                 >
-                  🏷️ {user.customerValue} Value Customer
+                   {/* {user.customerValue} Value Customer */}
                 </span>
               </div>
             </div>
@@ -382,7 +382,7 @@ const Admin = ({ user }) => {
               )}
             </div>
             
-            <div className="user-actions">
+            {/* <div className="user-actions">
               {user.email !== 'tanmaysawankar9175@gmail.com' && (
                 <button 
                   className={`admin-toggle ${user.isAdmin ? 'revoke' : 'grant'}`}
@@ -393,10 +393,10 @@ const Admin = ({ user }) => {
               )}
               {user.email === 'tanmaysawankar9175@gmail.com' && (
                 <div className="super-admin-note">
-                  🔒 Super Admin (Protected Account)
+                  Super Admin (Protected Account)
                 </div>
               )}
-            </div>
+            </div> */}
           </div>
         ))}
       </div>
@@ -406,7 +406,7 @@ const Admin = ({ user }) => {
   const renderProducts = () => (
     <div className="admin-products">
       <div className="section-header">
-        <h3>📦 Product Performance Analytics ({products.length} Products)</h3>
+        <h3>Product Performance Analytics ({products.length} Products)</h3>
         <p>Real-time product sales data, customer insights, and performance metrics</p>
       </div>
       
